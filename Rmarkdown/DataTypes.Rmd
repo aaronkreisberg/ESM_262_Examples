@@ -84,7 +84,7 @@ possible.fish = c("salmon","steelhead","shark","tuna","cod")
 # we can use sample to simulate a random recording of catch by fisherman, lets say we pick 20 fish from the net
 
 catch1 = base::sample(possible.fish, size=20, replace=T)
-# because possible.fish was a factor catch1 will be a factor
+# because possible.fish was a vector catch1 will be a vector
 catch1
 
 summary(catch1)
