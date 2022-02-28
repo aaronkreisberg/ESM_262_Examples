@@ -122,7 +122,9 @@ ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=
 
 #How do you figure out the rarest fish in our simulated ocean
 
+min(summary(catch1))
 
+which.min(summary(catch1))
 ```
 
 # Aside **sprintf**
@@ -138,6 +140,12 @@ some useful syntax if you want to generate strings
 Try it
 
 make a string with **sprintf** and add to plot title
+
+```{r}
+plottitle=sprintf("We mostly caught %s but not %s \n max catch(%d)\n min catch(%d)", names(which.max(summary(catch1))), names(which.min(summary(catch1))), max(summary(catch1)), min(summary(catch1)))
+ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
+```
+
 
 
 # <span style="color:blue"> Functions with factors 
